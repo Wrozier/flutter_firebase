@@ -54,7 +54,34 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextFormField(
                           decoration: InputDecoration(labelText: 'Password'),
                           obscureText: true,
+                          validator: (value) {
+                            if (value.isEmpty || value.length <= 5) {
+                              return 'invalid password';
+                            }
+                            return null;
+                          },
+                          onSaved: (value) 
+                          {
+
+                          },
+                        ),
+                        SizedBox( 
+                          height: 30,
                         )
+                        RaisedButton(
+                          child: Text( 
+                            'Submit'
+                          ),
+                          onPressed: ()
+                          {
+
+                          },
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          color: Colors.blue,
+                          textColor: Colors.white,
+                        ),
                       ],
                     ),
                   ),
